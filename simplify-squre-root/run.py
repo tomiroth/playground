@@ -47,7 +47,7 @@ def sort_in_to_pairs(multipliers):
         else:
             if len(numbers) > 1:
                 del numbers[-1]
-                outsideSqr = outsideSqr * multiply_list(numburs[0:int(len(numbers)/2)])
+                outsideSqr = outsideSqr * multiply_list(numbers[0:int(len(numbers)/2)])
             insideSqr = insideSqr * numbers[0]
 
     return outsideSqr, insideSqr
