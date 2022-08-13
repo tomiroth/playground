@@ -3,6 +3,11 @@ import math
 import time 
 
 primeNumbers = [2,3,5,7,11,13,17]
+def is_prime(n):
+  for i in range(2,n):
+    if (n%i) == 0:
+      return False
+  return True
 
 def work_out_multiplys(number):
     for prime in primeNumbers:
@@ -63,11 +68,14 @@ def multiply_list(list):
 
 def simplify(number):
     print(u"\u221a",number)
-    multipliers = get_multiplys_until_they_are_all_prime([number])
-    print("=",' x '.join(map(str,multipliers)))
-    sSqr = sort_in_to_pairs(multipliers)
-    print("=",sSqr[0],u"\u221a",sSqr[1])
-    print("=",sSqr[0] * math.sqrt(sSqr[1]))
+    if is_prime(number):
+        print("Number is prime, can't be simplified")
+    else:
+        multipliers = get_multiplys_until_they_are_all_prime([number])
+        print("=",' x '.join(map(str,multipliers)))
+        sSqr = sort_in_to_pairs(multipliers)
+        print("=",sSqr[0],u"\u221a",sSqr[1])
+        print("=",sSqr[0] * math.sqrt(sSqr[1]))
 
 
 
